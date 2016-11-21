@@ -36,6 +36,7 @@ This integration serves as a replacement for the OOTB ServiceNow AWS CloudWatch 
 * ```pip install -r requirements.txt -t . ```
 * ```zip -r deploy.zip .```
 * Deploy the deploy.zip to Lambda
+* Set the handler function to send_event.send_event
 * The following environment variables will need to be set in Lambda:
     * ```username```: Username to authenticate against your ServiceNow Instance
     * ```password```: Password to authenticate against your ServiceNow Instance
