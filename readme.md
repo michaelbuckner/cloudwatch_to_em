@@ -12,7 +12,7 @@ This integration serves as a replacement for the OOTB ServiceNow AWS CloudWatch 
         * AmazonAPIGatewayPushToCloudWatchLogs
         * AmazonSNSReadOnlyAccess
     * As well as the following in-line policy (built by one-click deployment in AWS)
-    ```
+    ```json
     {
       "Version": "2012-10-17",
       "Statement": [
