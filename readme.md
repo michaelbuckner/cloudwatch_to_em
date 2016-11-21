@@ -1,3 +1,5 @@
+![alt tag](http://allvectorlogo.com/img/2016/04/servicenow-logo-200x116.png)
+
 # AWS CloudWatch to ServiceNow Event Management Lambda Integration
 
 This integration serves as a replacement for the OOTB ServiceNow AWS CloudWatch integration. It can be expanded to support a wider set of features and configuration scenarios.

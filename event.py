@@ -36,7 +36,7 @@ class Event:
         conn = boto.ec2.connect_to_region(self.region)
         reservations = conn.get_all_instances(instance_ids=[self.instance_id])
         instance = reservations[0].instances[0]
-        print("Name tag: ", instance.tags['Name'])
+        print("LOG Name tag: ", instance.tags['Name'])
         # Return name tag.
         return instance.tags['Name']
 
