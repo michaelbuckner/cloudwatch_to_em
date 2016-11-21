@@ -23,9 +23,9 @@ class Event:
         self.additional_info = additional_info
         self.node = instance_id
         # Change node property to AWS name tag if resource namespace is AWS/EC2
-        self.parse_alarm_resource()
+        self.parse_alarm_from_resource()
 
-    def parse_alarm_resource(self):
+    def parse_alarm_from_resource(self):
         if self.resource == 'AWS/EC2':
             self.node = self.__get_ec2_name_tag()
         else:
