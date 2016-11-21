@@ -7,7 +7,6 @@ import json
 
 def send_event(event, context):
     """
-
     :param event: A JSON representation of the event triggering the Lambda execution.
     :param context: The context of the event trigger.
     """
@@ -38,6 +37,7 @@ def send_event(event, context):
     elif raw_message['Region'] == 'US West - N. California':
         region = 'us-west-1'
     else:
+        # TODO Add more regions as needed
         print("LOG Error: Region not supported yet")
         exit()
 
@@ -63,5 +63,5 @@ def send_event(event, context):
         print('LOG Error: ', e)
     finally:
         # Log the response
-        print('LOG Response: ', response.json())
+        print('LOG Response: ', response.status_code)
         print("LOG Function execution end")

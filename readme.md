@@ -3,32 +3,32 @@
 This integration serves as a replacement for the OOTB ServiceNow AWS CloudWatch integration. It can be expanded to support a wider set of features and configuration scenarios.
 
 ## Requirements
-* A proper lambda execution IAM role configured. At a minimum the role will needed.
 * An SNS topic must exist.
 * CloudWatch Alarms must be notifying to that topic
     * The alarms should have two conditions: ALARM and OK. This will allow for clearing events to be sent to ServiceNow Event Management
-* The following minimum permissions are required:
-    * AmazonEC2ReadOnlyAccess
-    * AmazonAPIGatewayPushToCloudWatchLogs
-    * AmazonSNSReadOnlyAccess
-* As well as the following in-line policy (built by one-click deployment in AWS)
-```
-{
-  "Version": "2012-10-17",
-  "Statement": [
+* A proper lambda execution IAM role configured.
+    * The following minimum permissions are required:
+        * AmazonEC2ReadOnlyAccess
+        * AmazonAPIGatewayPushToCloudWatchLogs
+        * AmazonSNSReadOnlyAccess
+    * As well as the following in-line policy (built by one-click deployment in AWS)
+    ```
     {
-      "Effect": "Allow",
-      "Action": [
-        "logs:CreateLogGroup",
-        "logs:CreateLogStream",
-        "logs:PutLogEvents"
-      ],
-      "Resource": "arn:aws:logs:*:*:*"
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Action": [
+            "logs:CreateLogGroup",
+            "logs:CreateLogStream",
+            "logs:PutLogEvents"
+          ],
+          "Resource": "arn:aws:logs:*:*:*"
+        }
+      ]
     }
-  ]
-}
-```
-    
+    ```
+        
 ## How to build and deploy
 * Lambda requires python2.7.
 * Lambda also requires all the external libraries to be in the root of the application's directory.
