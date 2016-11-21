@@ -27,11 +27,12 @@ class Event:
 
     def parse_alarm_resource(self):
         if self.resource == 'AWS/EC2':
-            self.node = self.__get_aws_name_tag()
+            self.node = self.__get_ec2_name_tag()
         else:
+            # TODO Add additional elif statements to support a broader set of AWS features.
             pass
 
-    def __get_aws_name_tag(self):
+    def __get_ec2_name_tag(self):
         # Lookup instance by id
         conn = boto.ec2.connect_to_region(self.region)
         reservations = conn.get_all_instances(instance_ids=[self.instance_id])
@@ -39,3 +40,19 @@ class Event:
         print("Name tag: ", instance.tags['Name'])
         # Return name tag.
         return instance.tags['Name']
+
+    def __get_rds_name_tag(self):
+        # TODO Implement me
+        pass
+
+    def __get_lambda_function_name(self):
+        # TODO Implement me
+        pass
+
+    def __get_api_gateway_resources(self):
+        # TODO Implement me
+        pass
+
+    def __get_s3_name_tag(self):
+        # TODO Implement me
+        pass
