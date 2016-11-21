@@ -42,3 +42,4 @@ This integration serves as a replacement for the OOTB ServiceNow AWS CloudWatch 
     * ```table_namespace```: Namespace of the table API for ServiceNow Event Management. e.g. ```/api/now/table/em_event```
     * ```domain```: Domain of your servicenow instance. Should be ```service-now.com``` unless you have an on-prem install.
     * ```instance```: Your ServiceNow instance name.
+* Lambda execution time will need to be increased. Will vary by instance.
