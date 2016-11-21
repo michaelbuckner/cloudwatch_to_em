@@ -13,7 +13,6 @@ def send_event(event, context):
     """
     # Logging
     print('Context: ', context)
-    print('DEBUG: Config Object: ', config)
     # Normalize raw SNS data
     raw_message = json.loads(event['Records'][0]['Sns']['Message'])
     # Get instance ID for node
